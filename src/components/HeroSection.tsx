@@ -2,6 +2,9 @@ import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
+import AnimatedGradient, { AnimatedGradientText } from "./AnimatedGradient";
+import MorphingShape from "./MorphingShape";
+import ScrollReveal from "./ScrollReveal";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -28,6 +31,31 @@ export default function HeroSection() {
 
   return (
     <section className="py-12 md:py-16 relative overflow-hidden">
+      {/* Animated Background */}
+      <AnimatedGradient 
+        className="opacity-20"
+        colors={["#3b82f6", "#06b6d4", "#10b981", "#f59e0b"]}
+        duration={15}
+        direction="diagonal"
+        size={300}
+      />
+      
+      {/* Morphing Shapes */}
+      <div className="absolute top-20 right-10 opacity-30">
+        <MorphingShape 
+          size={150}
+          colors={["#3b82f6", "#06b6d4"]}
+          speed={2}
+        />
+      </div>
+      <div className="absolute bottom-20 left-10 opacity-20">
+        <MorphingShape 
+          size={100}
+          colors={["#10b981", "#f59e0b"]}
+          speed={1.5}
+        />
+      </div>
+      
       <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
         <motion.div
           className="flex flex-col md:flex-row md:items-center justify-between mb-8"
@@ -40,7 +68,9 @@ export default function HeroSection() {
               className="text-2xl md:text-3xl font-bold mb-2"
               variants={childVariants}
             >
-              Hi! I'm Gabriel, nice to meet you.
+              <AnimatedGradientText className="text-2xl md:text-3xl font-bold">
+                Hi! I'm Gabriel, nice to meet you.
+              </AnimatedGradientText>
             </motion.h1>
 
             <motion.p

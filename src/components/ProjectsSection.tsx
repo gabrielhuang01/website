@@ -11,20 +11,36 @@ import { Github } from "lucide-react";
 import { GlassCard } from "./ui/glass-card";
 import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
+import ScrollReveal, { StaggerReveal } from "./ScrollReveal";
+import AnimatedGradient from "./AnimatedGradient";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-6 relative">
-      <div className="container max-w-4xl mx-auto px-6 md:px-4">
-        <MotionWrapper>
+    <section id="projects" className="py-6 relative overflow-hidden">
+      {/* Animated Background */}
+      <AnimatedGradient 
+        className="opacity-5"
+        colors={["#3b82f6", "#06b6d4", "#10b981"]}
+        duration={20}
+        direction="radial"
+        size={400}
+      />
+      
+      <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
+        <ScrollReveal direction="up" distance={30}>
           <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
             🚀 Projects
           </h2>
-        </MotionWrapper>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <StaggerReveal staggerDelay={0.2}>
           {projects.map((project, index) => (
-            <MotionWrapper key={project.title} delay={index * 0.2}>
+            <ScrollReveal 
+              key={project.title} 
+              direction="up" 
+              distance={50}
+              delay={index * 0.1}
+            >
               <GlassCard className="group overflow-hidden dark:border-primary/20 h-full flex flex-col">
                 <CardHeader className="bg-gradient-to-r from-primary/5 via-cyan-500/5 to-teal-500/5">
                   <CardTitle className="text-center md:text-left group-hover:text-primary transition-colors duration-300">
@@ -66,9 +82,9 @@ export default function ProjectsSection() {
                   </motion.a>
                 </CardFooter>
               </GlassCard>
-            </MotionWrapper>
+            </ScrollReveal>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

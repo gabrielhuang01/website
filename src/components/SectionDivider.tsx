@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import MorphingShape from "./MorphingShape";
+import AnimatedGradient from "./AnimatedGradient";
 
 export default function SectionDivider() {
   return (
@@ -10,7 +12,29 @@ export default function SectionDivider() {
       viewport={{ once: true }}
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent" />
+      <AnimatedGradient 
+        className="opacity-10"
+        colors={["#3b82f6", "#06b6d4", "#10b981"]}
+        duration={8}
+        direction="horizontal"
+        size={200}
+      />
+      
+      {/* Morphing shapes */}
+      <div className="absolute left-1/4 top-1/2 transform -translate-y-1/2 opacity-20">
+        <MorphingShape 
+          size={80}
+          colors={["#3b82f6", "#06b6d4"]}
+          speed={1}
+        />
+      </div>
+      <div className="absolute right-1/4 top-1/2 transform -translate-y-1/2 opacity-15">
+        <MorphingShape 
+          size={60}
+          colors={["#10b981", "#f59e0b"]}
+          speed={1.5}
+        />
+      </div>
       
       {/* Main divider line */}
       <div className="relative flex items-center justify-center">
