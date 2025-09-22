@@ -4,7 +4,7 @@ export const personalInfo = {
   email: "gzh2@cornell.edu",
   github: "https://github.com/gabrielhuang00",
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
-  profilePicture: "/profile-new.png",
+  profilePicture: "/profile-latest.png",
   heroDescription:
     "Currently an LLM Evaluation & Research Fellow at Handshake x OpenAI and conducting research in reinforced learning at Cornell Engineering.",
 };
