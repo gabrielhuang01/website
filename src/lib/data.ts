@@ -27,7 +27,7 @@ export const workExperience = [
     position: "Undergraduate Reinforced Learning Researcher",
     period: "June 2025 - Present",
     achievements: [
-      "Engineered a discrete-event simulation stack (Python) for single- and multi-station queueing networks (e.g., criss-cross) with pluggable schedulers (FIFO/priority/hedging) and seeded reproducibility.",
+      "Engineered a discrete-event simulation stack (C, Python) for single- and multi-station queueing networks (e.g., criss-cross) with pluggable schedulers (FIFO/priority/hedging) and seeded reproducibility.",
       "Developed modular, class-based experiment harnesses, unit tests, and logging/visualization of performance fronts, and instrumented KPIs including mean sojourn time, queue length, tail delay quantiles, and throughput.",
       "Implemented and benchmarked novel policy-gradient methods (PATHWISE/reparameterization, IPA, PPO) against REINFORCE and classical heuristics (MaxWeight, MaxPressure), running ablations across arrival/service regimes and overload.",
     ],
@@ -56,6 +56,17 @@ export const workExperience = [
       "Implemented SQL queries and optimized database schemas to reduce query latency.",
     ],
   },
+  {
+    company: "Guidehouse",
+    location: "New York, NY",
+    position: "Financial Services Consulting Intern",
+    period: "June 2023 - August 2023",
+    achievements: [
+      "Partnered with industry leaders and government entities (FDIC, Department of Transportation) to address complex challenges, including regulatory compliance and stress-testing emerging software platforms",
+      "Conducted advanced data analysis, developing predictive quantitative models for the housing market that empowered clientele decision making",
+      "Authored statistical analyses and prescriptive market models, utilized in tailoring economic outlooks and risk assessments to the unique needs of our client portfolios",
+    ],
+  },
 ];
 
 export const education = [
@@ -79,6 +90,8 @@ export const skills = {
     "TypeScript",
     "SQL",
     "R",
+    "C",
+    "Java",
   ],
   frontendDevelopment: [
     "React",
@@ -93,6 +106,8 @@ export const skills = {
     "RESTful APIs",
     "asyncio",
     "OpenAI APIs",
+    "PyTorch",
+    "TensorFlow",
   ],
   databaseAndStorage: [
     "SQL",
@@ -129,6 +144,18 @@ export const projects = [
       "Sharpe: 2.8. Currently improving by building NLP, regex recognition of market structure through title — main losses are through miscategorization of respective market.",
       "Technologies: asyncio, REST, websockets, huggingface",
       "Status: Deployed (March 2025 - Present)",
+    ],
+  },
+  {
+    title: "SVD Gradient Execution Algorithm",
+    github: "https://github.com/gabrielhuang00/svd-trading-algorithm",
+    description: [
+      "Backtested and developed a fully autonomous trading algorithm using Python's backtrader library",
+      "Utilized Singular Value Decomposition to map out correlations between 5 different market sectors over an 8-year period, using 12 different stocks from these sectors",
+      "Executed trades when the gradient between the projection of price vectors onto selected singular vectors exceeded an optimized threshold",
+      "Plotted results and performed train-test splits to check for overfitting",
+      "Technologies: backtrader, quantstats, yfinance, numpy",
+      "Duration: May 2022 – June 2022",
     ],
   },
 ];
