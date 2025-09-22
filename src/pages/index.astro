@@ -7,6 +7,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import AwardsSection from "@/components/AwardsSection";
 import EducationSection from "@/components/EducationSection";
+import InteractiveSidebar from "@/components/InteractiveSidebar";
 import Footer from "@/components/Footer";
 ---
 
@@ -14,11 +15,12 @@ import Footer from "@/components/Footer";
   <GlassHeader client:only="react" />
   <main class="min-h-screen">
     <HeroSection client:only="react" />
+    <EducationSection client:only="react" />
     <ExperienceSection client:only="react" />
     <SkillsSection client:only="react" />
     <ProjectsSection client:only="react" />
     <AwardsSection client:only="react" />
-    <EducationSection client:only="react" />
   </main>
+  <InteractiveSidebar client:only="react" />
   <Footer client:only="react" />
 </Layout>

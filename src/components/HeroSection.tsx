@@ -40,8 +40,7 @@ export default function HeroSection() {
               className="text-4xl font-bold mb-2"
               variants={childVariants}
             >
-              {personalInfo.name}{" "}
-              <span className="inline-block animate-pulse">✨</span>
+              {personalInfo.name}
             </motion.h1>
 
             <motion.p
