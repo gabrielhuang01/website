@@ -6,7 +6,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
   profilePicture: "/profile.jpeg",
   heroDescription:
-    "Passionate about machine learning, data science, and building impactful solutions. Currently working as an LLM Evaluation & Research Fellow at Handshake x OpenAI and conducting research in reinforced learning at Cornell Engineering.",
+    "I enjoy ML, trading, DS, and building. Currently an LLM Evaluation & Research Fellow at Handshake x OpenAI and conducting research in reinforced learning at Cornell Engineering.",
 };
 
 export const workExperience = [
@@ -58,18 +58,6 @@ export const workExperience = [
       "Built scalable backend services in Python (Flask) to support user portfolios, trade tracking, and real-time market data feeds.",
       "Designed and integrated RESTful APIs to fetch and display live financial metrics and user-generated content.",
       "Implemented SQL queries and optimized database schemas to reduce query latency.",
-    ],
-  },
-  {
-    company: "Guidehouse",
-    location: "New York, NY",
-    position: "Financial Services Consulting Intern",
-    period: "June 2023 - August 2023",
-    logo: "https://logo.clearbit.com/guidehouse.com",
-    achievements: [
-      "Partnered with industry leaders and government entities (FDIC, Department of Transportation) to address complex challenges, including regulatory compliance and stress-testing emerging software platforms",
-      "Conducted advanced data analysis, developing predictive quantitative models for the housing market that empowered clientele decision making",
-      "Authored statistical analyses and prescriptive market models, utilized in tailoring economic outlooks and risk assessments to the unique needs of our client portfolios",
     ],
   },
 ];

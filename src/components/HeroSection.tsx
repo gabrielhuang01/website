@@ -69,7 +69,7 @@ export default function HeroSection() {
               variants={childVariants}
             >
               <AnimatedGradientText className="text-2xl md:text-3xl font-bold">
-                Hi! I'm Gabriel, nice to meet you.
+                Hey, I'm Gabriel. Come look around!
               </AnimatedGradientText>
             </motion.h1>
 
@@ -77,7 +77,7 @@ export default function HeroSection() {
               className="text-xl text-muted-foreground mb-6"
               variants={childVariants}
             >
-              ML/Software Engineer 👨‍💻
+              Undergrad at Cornell University.
             </motion.p>
 
             <motion.div
