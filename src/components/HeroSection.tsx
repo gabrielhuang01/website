@@ -154,22 +154,22 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          <div className="mt-8 md:mt-0 flex justify-center">
+          <div className="mt-8 md:mt-0 flex justify-center md:justify-end">
             <div className="relative group">
-              {/* Professional sharp border with gradient */}
-              <div className="absolute -inset-1 bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 dark:from-slate-600 dark:via-slate-700 dark:to-slate-800 rounded-full shadow-xl" />
-              <div className="absolute -inset-0.5 bg-white dark:bg-slate-900 rounded-full" />
+              {/* Professional square border with gradient */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 dark:from-slate-600 dark:via-slate-700 dark:to-slate-800 rounded-2xl shadow-xl" />
+              <div className="absolute -inset-0.5 bg-white dark:bg-slate-900 rounded-2xl" />
               
-              {/* Profile image with sharp, professional styling */}
+              {/* Profile image with square, professional styling */}
               <img
                 src={personalInfo.profilePicture}
                 alt="Profile"
-                className="w-48 md:w-56 rounded-full relative ring-1 ring-slate-200 dark:ring-slate-700 shadow-2xl group-hover:shadow-3xl transition-all duration-300"
+                className="w-48 md:w-56 h-48 md:h-56 rounded-2xl relative ring-1 ring-slate-200 dark:ring-slate-700 shadow-2xl group-hover:shadow-3xl transition-all duration-300"
                 style={{ objectFit: "cover" }}
               />
               
               {/* Subtle inner glow effect */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
         </motion.div>

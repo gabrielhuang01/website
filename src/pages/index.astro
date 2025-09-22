@@ -11,6 +11,7 @@ import AwardsSection from "@/components/AwardsSection";
 import EducationSection from "@/components/EducationSection";
 import InteractiveSidebar from "@/components/InteractiveSidebar";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollLiftAnimation from "@/components/ScrollLiftAnimation";
 import Footer from "@/components/Footer";
 ---
 
@@ -19,15 +20,17 @@ import Footer from "@/components/Footer";
   <main class="min-h-screen">
     <HeroSection client:only="react" />
     <SectionDivider client:only="react" />
-    <EducationSection client:only="react" />
-    <SimpleDivider client:only="react" />
-    <ExperienceSection client:only="react" />
-    <SimpleDivider client:only="react" />
-    <CourseworkSection client:only="react" />
-    <SimpleDivider client:only="react" />
-    <ProjectsSection client:only="react" />
-    <SimpleDivider client:only="react" />
-    <AwardsSection client:only="react" />
+    <ScrollLiftAnimation client:only="react">
+      <EducationSection client:only="react" />
+      <SimpleDivider client:only="react" />
+      <ExperienceSection client:only="react" />
+      <SimpleDivider client:only="react" />
+      <CourseworkSection client:only="react" />
+      <SimpleDivider client:only="react" />
+      <ProjectsSection client:only="react" />
+      <SimpleDivider client:only="react" />
+      <AwardsSection client:only="react" />
+    </ScrollLiftAnimation>
   </main>
   <InteractiveSidebar client:only="react" />
   <ScrollToTop client:only="react" />
