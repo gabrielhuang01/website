@@ -40,7 +40,7 @@ export default function HeroSection() {
               className="text-4xl font-bold mb-2"
               variants={childVariants}
             >
-              {personalInfo.name}
+              Hi! I'm Gabriel. Thanks for stopping by.
             </motion.h1>
 
             <motion.p
