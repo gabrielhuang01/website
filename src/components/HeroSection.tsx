@@ -1,12 +1,42 @@
 import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import MotionWrapper from "./MotionWrapper";
-import DoodleAnimation, { DoodleBounce } from "./DoodleAnimation";
-import DoodleShape, { DoodleSquiggle, DoodleStar } from "./DoodleShape";
-import TypingTitle from "./TypingTitle";
+import DoodleAnimation from "./DoodleAnimation";
 
 export default function HeroSection() {
+  const [currentTitle, setCurrentTitle] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const titles = [
+    "Undergrad at Cornell University",
+    "AI/ML Engineer",
+    "Software Engineer", 
+    "Quantitative Trader"
+  ];
+
+  useEffect(() => {
+    const currentFullTitle = titles[currentIndex];
+    
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setCurrentTitle(currentFullTitle.substring(0, currentTitle.length - 1));
+        if (currentTitle === "") {
+          setIsDeleting(false);
+          setCurrentIndex((prev) => (prev + 1) % titles.length);
+        }
+      } else {
+        setCurrentTitle(currentFullTitle.substring(0, currentTitle.length + 1));
+        if (currentTitle === currentFullTitle) {
+          setTimeout(() => setIsDeleting(true), 2000);
+        }
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [currentTitle, isDeleting, currentIndex, titles]);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,53 +60,24 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
-      {/* Light, doodle-themed background elements */}
-      <DoodleShape 
-        className="top-20 right-16"
-        size={60}
-        color="#e0e7ff"
-        delay={0.2}
-      />
-      <DoodleShape 
-        className="bottom-20 left-16"
-        size={40}
-        color="#fef3c7"
-        delay={0.4}
-      />
-      <DoodleStar 
-        className="top-1/3 left-1/4"
-        size={25}
-        color="#fde68a"
-        delay={0.6}
-      />
-      <DoodleSquiggle 
-        className="bottom-1/3 right-1/4"
-        delay={0.8}
-      />
-      
-      {/* Simple floating dots */}
+    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-700">
+      {/* Professional background elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-slate-300 dark:bg-slate-600 rounded-full"
-            style={{
-              left: `${20 + i * 10}%`,
-              top: `${30 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              y: [-10, 10, -10],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 3 + i * 0.5,
-              repeat: Infinity,
-              delay: i * 0.3,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
+        {/* Subtle geometric shapes */}
+        <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-slate-200/30 to-slate-300/20 dark:from-slate-700/30 dark:to-slate-600/20 rounded-full blur-xl" />
+        <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-slate-300/20 to-slate-400/10 dark:from-slate-600/20 dark:to-slate-500/10 rounded-full blur-lg" />
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-gradient-to-bl from-slate-200/25 to-slate-300/15 dark:from-slate-700/25 dark:to-slate-600/15 rounded-full blur-md" />
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]" 
+             style={{
+               backgroundImage: `
+                 linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                 linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px)
+               `,
+               backgroundSize: '20px 20px'
+             }} 
+        />
       </div>
       
       <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
@@ -94,19 +95,16 @@ export default function HeroSection() {
             </DoodleAnimation>
 
             <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
-              <TypingTitle
-                titles={[
-                  "Undergrad at Cornell University",
-                  "AI/ML Engineer",
-                  "Software Engineer", 
-                  "Quantitative Trader"
-                ]}
-                className="text-xl"
-                typingSpeed={80}
-                deletingSpeed={40}
-                pauseTime={2500}
-                delay={1000}
-              />
+              <span className="text-xl">
+                {currentTitle}
+                <motion.span
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ duration: 0.8, repeat: Infinity }}
+                  className="text-slate-500 dark:text-slate-400"
+                >
+                  |
+                </motion.span>
+              </span>
             </div>
 
             <motion.div
