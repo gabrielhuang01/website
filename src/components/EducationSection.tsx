@@ -8,7 +8,7 @@ export default function EducationSection() {
   return (
     <section
       id="education"
-      className="py-12 bg-gradient-to-b from-muted/10 to-background"
+      className="py-8 bg-gradient-to-b from-muted/5 to-background"
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
@@ -33,15 +33,15 @@ export default function EducationSection() {
 
               {edu.achievements && edu.achievements.length > 0 && (
                 <motion.div
-                  className="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-purple-500/20 dark:bg-card/10 dark:border-purple-500/10 shadow-sm"
+                  className="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-primary/20 dark:bg-card/10 dark:border-primary/20 shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
                   <div className="flex items-center mb-3">
-                    <div className="h-6 w-6 flex items-center justify-center rounded-full bg-purple-500/10 mr-2">
-                      <Award className="h-4 w-4 text-purple-500" />
+                    <div className="h-6 w-6 flex items-center justify-center rounded-full bg-primary/10 mr-2">
+                      <Award className="h-4 w-4 text-primary" />
                     </div>
                     <h4 className="text-sm font-medium">
                       ✨ Achievements & Activities

@@ -13,9 +13,9 @@ const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
       <motion.div
         ref={ref}
         className={cn(
-          "rounded-lg border border-border/50 bg-background/80 backdrop-blur-md backdrop-filter shadow-sm dark:bg-card/30 dark:backdrop-blur-md",
+          "rounded-xl border border-primary/20 bg-background/70 backdrop-blur-lg backdrop-filter shadow-lg dark:bg-card/20 dark:backdrop-blur-lg dark:border-primary/30",
           hoverEffect &&
-            "hover:shadow-md transition-all duration-300 ease-in-out",
+            "hover:shadow-xl hover:border-primary/40 transition-all duration-300 ease-in-out hover:bg-background/80 dark:hover:bg-card/30",
           className
         )}
         whileHover={
