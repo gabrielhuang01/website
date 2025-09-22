@@ -88,11 +88,9 @@ export default function HeroSection() {
           animate="visible"
         >
           <div className="text-center md:text-left">
-            <DoodleAnimation delay={0.2}>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
-                Hey, I'm Gabriel. Come look around!
-              </h1>
-            </DoodleAnimation>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
+              Hey, I'm Gabriel. Come look around!
+            </h1>
 
             <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
               <span className="text-xl">
@@ -157,17 +155,21 @@ export default function HeroSection() {
           </div>
 
           <div className="mt-8 md:mt-0 flex justify-center">
-            <div className="relative">
-              {/* Simple static border */}
-              <div className="absolute -inset-2 bg-slate-200 dark:bg-slate-600 rounded-full opacity-50" />
+            <div className="relative group">
+              {/* Professional sharp border with gradient */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 dark:from-slate-600 dark:via-slate-700 dark:to-slate-800 rounded-full shadow-xl" />
+              <div className="absolute -inset-0.5 bg-white dark:bg-slate-900 rounded-full" />
               
-              {/* Profile image */}
+              {/* Profile image with sharp, professional styling */}
               <img
                 src={personalInfo.profilePicture}
                 alt="Profile"
-                className="w-48 md:w-56 rounded-full relative ring-2 ring-slate-300 dark:ring-slate-600 shadow-lg"
+                className="w-48 md:w-56 rounded-full relative ring-1 ring-slate-200 dark:ring-slate-700 shadow-2xl group-hover:shadow-3xl transition-all duration-300"
                 style={{ objectFit: "cover" }}
               />
+              
+              {/* Subtle inner glow effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
         </motion.div>
