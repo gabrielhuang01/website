@@ -138,7 +138,7 @@ export const awards = [
     name: "Gates Scholarship",
     issuer: "Bill & Melinda Gates Foundation",
     date: "2023",
-    type: "Merit-Based Scholarship",
+    type: "Merit-Based Scholarships",
     position: "Scholar",
   },
 ];
