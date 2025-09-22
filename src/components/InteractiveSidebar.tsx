@@ -7,6 +7,7 @@ const sections = [
   { id: "coursework", label: "Coursework", icon: "📚" },
   { id: "projects", label: "Projects", icon: "🚀" },
   { id: "awards", label: "Awards", icon: "🏆" },
+  { id: "blog", label: "Blog", icon: "✍️" },
 ];
 
 export default function InteractiveSidebar() {
