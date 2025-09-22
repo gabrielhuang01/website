@@ -2,8 +2,9 @@ import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
-import DoodleAnimation, { DoodleBounce, DoodleWiggle } from "./DoodleAnimation";
+import DoodleAnimation, { DoodleBounce } from "./DoodleAnimation";
 import DoodleShape, { DoodleSquiggle, DoodleStar } from "./DoodleShape";
+import TypingTitle from "./TypingTitle";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -92,11 +93,21 @@ export default function HeroSection() {
               </h1>
             </DoodleAnimation>
 
-            <DoodleBounce delay={0.4}>
-              <p className="text-xl text-slate-600 dark:text-slate-300 mb-8">
-                Undergrad at Cornell Engineering.
-              </p>
-            </DoodleBounce>
+            <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
+              <TypingTitle
+                titles={[
+                  "Undergrad at Cornell University",
+                  "AI/ML Engineer",
+                  "Software Engineer", 
+                  "Quantitative Trader"
+                ]}
+                className="text-xl"
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseTime={2500}
+                delay={1000}
+              />
+            </div>
 
             <motion.div
               className="flex flex-col gap-2 items-center md:items-start"
@@ -147,61 +158,28 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          <DoodleWiggle delay={0.6}>
-            <div className="mt-8 md:mt-0 flex justify-center">
-              <div className="relative group">
-                {/* Simple doodle-style border */}
-                <motion.div 
-                  className="absolute -inset-2 bg-slate-200 dark:bg-slate-600 rounded-full"
-                  animate={{ 
-                    scale: [1, 1.05, 1],
-                    opacity: [0.5, 0.8, 0.5]
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
-                
-                {/* Profile image with simple effects */}
-                <motion.img
-                  src={personalInfo.profilePicture}
-                  alt="Profile"
-                  className="w-48 md:w-56 rounded-full relative ring-2 ring-slate-300 dark:ring-slate-600 shadow-lg"
-                  style={{ objectFit: "cover" }}
-                  whileHover={{
-                    scale: 1.05,
-                    transition: { duration: 0.2 }
-                  }}
-                />
-                
-                {/* Simple doodle elements around profile */}
-                <DoodleStar 
-                  className="top-2 right-2"
-                  size={20}
-                  color="#fbbf24"
-                  delay={1}
-                />
-                <DoodleShape 
-                  className="bottom-2 left-2"
-                  size={15}
-                  color="#a78bfa"
-                  delay={1.2}
-                />
-              </div>
+          <div className="mt-8 md:mt-0 flex justify-center">
+            <div className="relative">
+              {/* Simple static border */}
+              <div className="absolute -inset-2 bg-slate-200 dark:bg-slate-600 rounded-full opacity-50" />
+              
+              {/* Profile image */}
+              <img
+                src={personalInfo.profilePicture}
+                alt="Profile"
+                className="w-48 md:w-56 rounded-full relative ring-2 ring-slate-300 dark:ring-slate-600 shadow-lg"
+                style={{ objectFit: "cover" }}
+              />
             </div>
-          </DoodleWiggle>
+          </div>
         </motion.div>
 
-        <DoodleAnimation delay={0.8}>
-          <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-600 shadow-lg">
-            <p className="text-slate-700 dark:text-slate-300 pl-4 py-2 relative">
-              <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-slate-400 to-slate-600 rounded-full"></span>
-              {personalInfo.heroDescription}
-            </p>
-          </div>
-        </DoodleAnimation>
+        <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-600 shadow-lg">
+          <p className="text-slate-700 dark:text-slate-300 pl-4 py-2 relative">
+            <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-slate-400 to-slate-600 rounded-full"></span>
+            {personalInfo.heroDescription}
+          </p>
+        </div>
       </div>
     </section>
   );
