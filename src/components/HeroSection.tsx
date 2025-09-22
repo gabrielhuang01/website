@@ -37,7 +37,7 @@ export default function HeroSection() {
         >
           <div className="text-center md:text-left">
             <motion.h1
-              className="text-3xl md:text-4xl font-bold mb-2"
+              className="text-2xl md:text-3xl font-bold mb-2"
               variants={childVariants}
             >
               Hi! I'm Gabriel. Thanks for stopping by.

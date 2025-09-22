@@ -15,6 +15,7 @@ export const workExperience = [
     location: "Remote",
     position: "LLM Evaluation & Research Fellow",
     period: "July 2025 - Present",
+    logo: "https://logo.clearbit.com/openai.com",
     achievements: [
       "Collaborate with OpenAI labs to build validation testing infrastructure for GPT, validating unreleased capabilities with confidential benchmarks; specifics under NDA.",
       "Build and maintain an automated eval harness (Python, OpenAI APIs, async workers) running async prompts across proprietary benchmarks; shipping weekly dashboards with 95% CIs.",
@@ -26,6 +27,7 @@ export const workExperience = [
     location: "Ithaca, NY",
     position: "Undergraduate Reinforced Learning Researcher",
     period: "June 2025 - Present",
+    logo: "https://logo.clearbit.com/cornell.edu",
     achievements: [
       "Engineered a discrete-event simulation stack (C, Python) for single- and multi-station queueing networks (e.g., criss-cross) with pluggable schedulers (FIFO/priority/hedging) and seeded reproducibility.",
       "Developed modular, class-based experiment harnesses, unit tests, and logging/visualization of performance fronts, and instrumented KPIs including mean sojourn time, queue length, tail delay quantiles, and throughput.",
@@ -37,6 +39,7 @@ export const workExperience = [
     location: "New York, NY",
     position: "Impact Data Scientist",
     period: "March 2024 - May 2025",
+    logo: "https://logo.clearbit.com/commonpointqueens.org",
     achievements: [
       "Engineered data analytics solutions to serve NYC, optimizing staff satisfaction, participant distribution, and program performance systems while incorporating ETL processes and ensuring data quality control.",
       "Designed and implemented statistical, machine-learning solutions (sklearn) to best model and optimize problems with company turnover.",
@@ -49,6 +52,7 @@ export const workExperience = [
     location: "Remote",
     position: "Software Engineering Intern",
     period: "September 2022 - February 2023",
+    logo: "https://logo.clearbit.com/involio.com",
     achievements: [
       "Developed and maintained core features for a social investing platform using React and TypeScript, improving frontend performance and user engagement.",
       "Built scalable backend services in Python (Flask) to support user portfolios, trade tracking, and real-time market data feeds.",
@@ -61,6 +65,7 @@ export const workExperience = [
     location: "New York, NY",
     position: "Financial Services Consulting Intern",
     period: "June 2023 - August 2023",
+    logo: "https://logo.clearbit.com/guidehouse.com",
     achievements: [
       "Partnered with industry leaders and government entities (FDIC, Department of Transportation) to address complex challenges, including regulatory compliance and stress-testing emerging software platforms",
       "Conducted advanced data analysis, developing predictive quantitative models for the housing market that empowered clientele decision making",
@@ -75,10 +80,11 @@ export const education = [
     location: "Ithaca, NY",
     degree: "Dual B.S. in Computer Science & ORIE",
     period: "Aug 2023 - May 2027",
+    logo: "https://logo.clearbit.com/cornell.edu",
     achievements: [
       "GPA: 3.75",
-      "Dual degree in Computer Science and Operations Research & Information Engineering",
-      "Currently conducting undergraduate research in reinforced learning",
+      "Dual degree in Computer Science and Operations Research & Financial Engineering",
+      "Currently conducting undergraduate research in Reinforced Learning under Prof. Jim Dai",
       "Expected graduation: May 2027",
     ],
   },
@@ -114,11 +120,6 @@ export const skills = {
     "Database Optimization",
     "ETL Processes",
   ],
-  cloudAndDevOps: [
-    "Data Visualization",
-    "Statistical Analysis",
-    "Machine Learning",
-  ],
   toolsAndServices: [
     "Tableau",
     "Looker",
@@ -127,10 +128,7 @@ export const skills = {
     "Unit Testing",
     "Git",
     "Data Quality Control",
-    "Policy Gradient Methods",
-    "REINFORCE",
-    "PPO",
-    "Discrete Event Simulation",
+    "Event Simulation",
   ],
 };
 

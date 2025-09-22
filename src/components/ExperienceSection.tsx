@@ -32,6 +32,7 @@ export default function ExperienceSection() {
               title={`${job.position}`}
               subtitle={`${job.company} • ${job.location}`}
               date={`📅 ${job.period}`}
+              logo={job.logo}
               isLast={index === workExperience.length - 1}
               index={index}
             >

@@ -6,6 +6,7 @@ interface TimelineItemProps {
   title: string;
   subtitle: string;
   date: string;
+  logo?: string;
   isLast?: boolean;
   index?: number;
   children?: React.ReactNode;
@@ -15,6 +16,7 @@ export default function TimelineItem({
   title,
   subtitle,
   date,
+  logo,
   isLast = false,
   index = 0,
   children,
@@ -58,9 +60,23 @@ export default function TimelineItem({
           transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <h3 className="text-lg font-bold text-foreground">{title}</h3>
-          <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
-          <p className="text-xs text-muted-foreground/70 mb-2">{date}</p>
+          <div className="flex items-center gap-3">
+            {logo && (
+              <img
+                src={logo}
+                alt="Company/Institution logo"
+                className="w-8 h-8 rounded object-contain bg-background border border-border/20"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            )}
+            <div>
+              <h3 className="text-lg font-bold text-foreground">{title}</h3>
+              <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
+              <p className="text-xs text-muted-foreground/70 mb-2">{date}</p>
+            </div>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}

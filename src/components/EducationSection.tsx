@@ -21,9 +21,10 @@ export default function EducationSection() {
           {education.map((edu, index) => (
             <TimelineItem
               key={edu.institution}
-              title={`🎓 ${edu.degree}`}
-              subtitle={`🏛️ ${edu.institution}`}
+              title={`${edu.degree}`}
+              subtitle={`${edu.institution} • ${edu.location}`}
               date={`📅 ${edu.period}`}
+              logo={edu.logo}
               isLast={index === education.length - 1}
               index={index}
             >
