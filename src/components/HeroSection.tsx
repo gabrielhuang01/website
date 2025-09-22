@@ -89,7 +89,7 @@ export default function HeroSection() {
         >
           <div className="text-center md:text-left">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
-              Hey, I'm Gabriel. Come look around!
+               welcome to my website.
             </h1>
 
             <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
