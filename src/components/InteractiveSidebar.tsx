@@ -16,15 +16,24 @@ export default function InteractiveSidebar() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        // Find the section with the highest intersection ratio
+        let maxRatio = 0;
+        let activeId = "education";
+        
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            activeId = entry.target.id;
           }
         });
+        
+        if (maxRatio > 0) {
+          setActiveSection(activeId);
+        }
       },
       {
-        threshold: 0.3,
-        rootMargin: "-100px 0px -100px 0px",
+        threshold: [0.1, 0.3, 0.5, 0.7],
+        rootMargin: "-50px 0px -50px 0px",
       }
     );
 

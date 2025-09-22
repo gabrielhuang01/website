@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import GlassHeader from "@/components/GlassHeader";
 import HeroSection from "@/components/HeroSection";
 import SectionDivider from "@/components/SectionDivider";
+import SimpleDivider from "@/components/SimpleDivider";
 import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -18,9 +19,13 @@ import Footer from "@/components/Footer";
     <HeroSection client:only="react" />
     <SectionDivider client:only="react" />
     <EducationSection client:only="react" />
+    <SimpleDivider client:only="react" />
     <ExperienceSection client:only="react" />
+    <SimpleDivider client:only="react" />
     <SkillsSection client:only="react" />
+    <SimpleDivider client:only="react" />
     <ProjectsSection client:only="react" />
+    <SimpleDivider client:only="react" />
     <AwardsSection client:only="react" />
   </main>
   <InteractiveSidebar client:only="react" />

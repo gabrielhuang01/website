@@ -58,8 +58,8 @@ export default function TimelineItem({
           transition={{ duration: 0.5, delay: index * 0.2 + 0.1 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <h3 className="font-medium">{title}</h3>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
+          <h3 className="text-lg font-bold text-foreground">{title}</h3>
+          <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
           <p className="text-xs text-muted-foreground/70 mb-2">{date}</p>
         </motion.div>
         <motion.div
