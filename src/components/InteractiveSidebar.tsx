@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const sections = [
   { id: "education", label: "Education", icon: "🎓" },
   { id: "experience", label: "Experience", icon: "💼" },
-  { id: "skills", label: "Skills", icon: "🛠️" },
+  { id: "coursework", label: "Coursework", icon: "📚" },
   { id: "projects", label: "Projects", icon: "🚀" },
   { id: "awards", label: "Awards", icon: "🏆" },
 ];

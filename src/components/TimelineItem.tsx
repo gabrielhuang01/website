@@ -65,7 +65,7 @@ export default function TimelineItem({
               <img
                 src={logo}
                 alt="Company/Institution logo"
-                className="w-8 h-8 rounded object-contain bg-background border border-border/20"
+                className="w-12 h-12 rounded-lg object-contain bg-background border border-border/20 shadow-sm"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
