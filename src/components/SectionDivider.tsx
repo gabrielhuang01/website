@@ -5,66 +5,130 @@ import AnimatedGradient from "./AnimatedGradient";
 export default function SectionDivider() {
   return (
     <motion.div
-      className="relative py-8 overflow-hidden"
+      className="relative py-12 overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      {/* Animated gradient background */}
+      {/* Dynamic animated gradient background */}
       <AnimatedGradient 
-        className="opacity-10"
-        colors={["#3b82f6", "#06b6d4", "#10b981"]}
-        duration={8}
-        direction="horizontal"
-        size={200}
+        className="opacity-15"
+        colors={["#3b82f6", "#06b6d4", "#10b981", "#f59e0b", "#ef4444"]}
+        duration={12}
+        direction="diagonal"
+        size={300}
       />
       
-      {/* Morphing shapes */}
-      <div className="absolute left-1/4 top-1/2 transform -translate-y-1/2 opacity-20">
-        <MorphingShape 
-          size={80}
-          colors={["#3b82f6", "#06b6d4"]}
-          speed={1}
-        />
-      </div>
-      <div className="absolute right-1/4 top-1/2 transform -translate-y-1/2 opacity-15">
-        <MorphingShape 
-          size={60}
-          colors={["#10b981", "#f59e0b"]}
-          speed={1.5}
-        />
+      {/* Multiple morphing shapes with different animations */}
+      <div className="absolute left-1/4 top-1/2 transform -translate-y-1/2 opacity-25">
+        <motion.div
+          animate={{ 
+            rotate: [0, 360],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <MorphingShape 
+            size={100}
+            colors={["#3b82f6", "#06b6d4"]}
+            speed={2}
+          />
+        </motion.div>
       </div>
       
-      {/* Main divider line */}
+      <div className="absolute right-1/4 top-1/2 transform -translate-y-1/2 opacity-20">
+        <motion.div
+          animate={{ 
+            rotate: [360, 0],
+            scale: [1, 0.8, 1]
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <MorphingShape 
+            size={80}
+            colors={["#10b981", "#f59e0b"]}
+            speed={1.5}
+          />
+        </motion.div>
+      </div>
+      
+      {/* Additional floating shapes */}
+      <div className="absolute left-1/2 top-1/4 transform -translate-x-1/2 opacity-15">
+        <motion.div
+          animate={{ 
+            y: [-20, 20, -20],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ 
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <MorphingShape 
+            size={60}
+            colors={["#ef4444", "#f59e0b"]}
+            speed={3}
+          />
+        </motion.div>
+      </div>
+      
+      {/* Main divider line with wave animation */}
       <div className="relative flex items-center justify-center">
         <motion.div
-          className="h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent w-full max-w-2xl"
+          className="h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent w-full max-w-3xl"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1.2, delay: 0.2 }}
+          transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
         />
         
-        {/* Central decorative element */}
+        {/* Central decorative element with complex animation */}
         <motion.div
-          className="absolute flex items-center justify-center w-16 h-16 bg-background border-2 border-primary/30 rounded-full"
-          initial={{ scale: 0, rotate: -180 }}
-          whileInView={{ scale: 1, rotate: 0 }}
+          className="absolute flex items-center justify-center w-20 h-20 bg-background border-2 border-primary/40 rounded-full shadow-lg"
+          initial={{ scale: 0, rotate: -180, opacity: 0 }}
+          whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
           transition={{ 
-            duration: 0.8, 
-            delay: 0.4,
+            duration: 1, 
+            delay: 0.5,
             type: "spring",
-            stiffness: 200,
-            damping: 15
+            stiffness: 150,
+            damping: 12
           }}
           viewport={{ once: true }}
+          whileHover={{ 
+            scale: 1.1,
+            rotate: 180,
+            transition: { duration: 0.5 }
+          }}
         >
+          {/* Inner rotating ring */}
           <motion.div
-            className="w-3 h-3 bg-primary rounded-full"
+            className="absolute w-16 h-16 border border-primary/20 rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ 
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          
+          {/* Pulsing center dot */}
+          <motion.div
+            className="w-4 h-4 bg-gradient-to-r from-primary to-cyan-500 rounded-full"
             animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.7, 1, 0.7]
+              scale: [1, 1.5, 1],
+              opacity: [0.8, 1, 0.8],
+              rotate: [0, 180, 360]
             }}
             transition={{ 
               duration: 2,
@@ -75,41 +139,77 @@ export default function SectionDivider() {
         </motion.div>
       </div>
       
-      {/* Floating particles effect */}
+      {/* Enhanced floating particles with trails */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-primary/40 rounded-full"
+            className="absolute rounded-full"
             style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + (i % 2) * 40}%`,
+              left: `${10 + i * 8}%`,
+              top: `${20 + (i % 3) * 30}%`,
+              width: `${2 + (i % 3)}px`,
+              height: `${2 + (i % 3)}px`,
+              background: `linear-gradient(45deg, #3b82f6, #06b6d4)`,
             }}
             animate={{
-              y: [-10, 10, -10],
-              opacity: [0.3, 0.8, 0.3],
+              y: [-15, 15, -15],
+              x: [-5, 5, -5],
+              opacity: [0.2, 0.8, 0.2],
+              scale: [0.5, 1.2, 0.5],
             }}
             transition={{
-              duration: 3 + i * 0.5,
+              duration: 4 + i * 0.3,
               repeat: Infinity,
-              delay: i * 0.3,
+              delay: i * 0.2,
               ease: "easeInOut",
             }}
           />
         ))}
       </div>
       
-      {/* Subtle text */}
+      {/* Animated text with typewriter effect */}
       <motion.div
-        className="text-center mt-8"
-        initial={{ opacity: 0, y: 20 }}
+        className="text-center mt-10"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
         viewport={{ once: true }}
       >
-        <p className="text-sm text-muted-foreground/60 font-medium tracking-wider uppercase">
+        <motion.p 
+          className="text-lg text-muted-foreground/80 font-medium tracking-widest uppercase"
+          animate={{ 
+            letterSpacing: ["0.2em", "0.4em", "0.2em"],
+            opacity: [0.6, 1, 0.6]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
           Portfolio
-        </p>
+        </motion.p>
+        
+        {/* Decorative lines */}
+        <motion.div
+          className="flex items-center justify-center mt-4 space-x-4"
+          initial={{ opacity: 0, scaleX: 0 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          viewport={{ once: true }}
+        >
+          <motion.div
+            className="h-px w-8 bg-gradient-to-r from-transparent to-primary/40"
+            animate={{ scaleX: [0, 1, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+          />
+          <motion.div
+            className="h-px w-8 bg-gradient-to-l from-transparent to-primary/40"
+            animate={{ scaleX: [0, 1, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 0.7 }}
+          />
+        </motion.div>
       </motion.div>
     </motion.div>
   );
