@@ -55,10 +55,17 @@ function CourseTag({ course, index }: { course: string; index: number }) {
         damping: 20,
         delay: 0.05 * index,
       }}
-      whileHover={{ scale: 1.05, y: -2 }}
-      className="px-3 py-2 bg-muted/80 backdrop-blur-sm rounded-lg text-sm border border-primary/20 shadow-sm font-medium"
+      whileHover={{ 
+        scale: 1.05, 
+        y: -2,
+        rotate: 1,
+        transition: { type: "spring", stiffness: 400, damping: 10 }
+      }}
+      className="px-3 py-2 bg-muted/80 backdrop-blur-sm rounded-lg text-sm border border-primary/20 shadow-sm font-medium group cursor-pointer hover:bg-primary/10 hover:border-primary/40 hover:shadow-md hover:shadow-primary/10 transition-all duration-300"
     >
-      {course}
+      <span className="group-hover:text-primary transition-colors duration-200">
+        {course}
+      </span>
     </motion.div>
   );
 }

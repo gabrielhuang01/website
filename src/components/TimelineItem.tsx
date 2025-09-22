@@ -23,17 +23,19 @@ export default function TimelineItem({
 }: TimelineItemProps) {
   return (
     <motion.div
-      className="relative flex gap-6"
+      className="relative flex gap-6 group"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
       viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ x: 8 }}
     >
       <div className="flex flex-col items-center">
         <motion.div
-          className="flex h-[18px] w-[18px] rounded-full border border-primary/60 bg-background dark:bg-muted z-10"
+          className="flex h-[18px] w-[18px] rounded-full border border-primary/60 bg-background dark:bg-muted z-10 group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-300"
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
+          whileHover={{ scale: 1.2 }}
           transition={{
             type: "spring",
             stiffness: 300,
@@ -62,13 +64,15 @@ export default function TimelineItem({
         >
           <div className="flex items-center gap-3">
             {logo && (
-              <img
+              <motion.img
                 src={logo}
                 alt="Company/Institution logo"
-                className="w-12 h-12 rounded-lg object-contain bg-background border border-border/20 shadow-sm"
+                className="w-12 h-12 rounded-lg object-contain bg-background border border-border/20 shadow-sm group-hover:shadow-lg group-hover:shadow-primary/10 group-hover:border-primary/30 transition-all duration-300"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />
             )}
             <div>

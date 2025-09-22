@@ -55,46 +55,46 @@ export default function HeroSection() {
               variants={containerVariants}
             >
               <motion.div
-                className="flex items-center text-sm text-muted-foreground"
+                className="flex items-center text-sm text-muted-foreground group"
                 variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
+                whileHover={{ scale: 1.05, x: 4 }}
               >
-                <MapPin className="h-4 w-4 mr-2" />
-                📍 {personalInfo.location}
+                <MapPin className="h-4 w-4 mr-2 group-hover:text-primary transition-colors duration-200" />
+                <span className="group-hover:text-foreground transition-colors duration-200">📍 {personalInfo.location}</span>
               </motion.div>
 
               <motion.a
                 href={`mailto:${personalInfo.email}`}
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
+                whileHover={{ scale: 1.05, x: 4 }}
               >
-                <Mail className="h-4 w-4 mr-2" />
-                ✉️ {personalInfo.email}
+                <Mail className="h-4 w-4 mr-2 group-hover:text-primary transition-colors duration-200" />
+                <span className="group-hover:text-foreground transition-colors duration-200">✉️ {personalInfo.email}</span>
               </motion.a>
 
               <motion.a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
+                whileHover={{ scale: 1.05, x: 4 }}
               >
-                <Github className="h-4 w-4 mr-2" />
-                🌟 GitHub
+                <Github className="h-4 w-4 mr-2 group-hover:text-primary group-hover:rotate-12 transition-all duration-200" />
+                <span className="group-hover:text-foreground transition-colors duration-200">🌟 GitHub</span>
               </motion.a>
 
               <motion.a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 variants={childVariants}
-                whileHover={{ scale: 1.05, color: "#4b5563" }}
+                whileHover={{ scale: 1.05, x: 4 }}
               >
-                <Linkedin className="h-4 w-4 mr-2" />
-                🔗 LinkedIn
+                <Linkedin className="h-4 w-4 mr-2 group-hover:text-primary group-hover:rotate-12 transition-all duration-200" />
+                <span className="group-hover:text-foreground transition-colors duration-200">🔗 LinkedIn</span>
               </motion.a>
             </motion.div>
           </div>

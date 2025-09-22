@@ -48,17 +48,22 @@ export default function EducationSection() {
                       ✨ Achievements & Activities
                     </h4>
                   </div>
-                  <ul className="list-none ml-4 space-y-2 text-sm">
+                  <ul className="list-none ml-4 space-y-3 text-sm">
                     {edu.achievements.map((achievement, i) => (
                       <motion.li
                         key={i}
-                        className="text-muted-foreground relative pl-6"
+                        className="text-muted-foreground relative pl-6 group"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.3, delay: 0.1 * i }}
                         viewport={{ once: true }}
+                        whileHover={{ x: 4 }}
                       >
-                        {achievement}
+                        <div className="absolute left-0 top-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary group-hover:scale-125 transition-all duration-200"></div>
+                        <div className="absolute left-2 top-2 w-0.5 h-0.5 rounded-full bg-primary/40 group-hover:bg-primary/60 transition-all duration-200"></div>
+                        <span className="group-hover:text-foreground/90 transition-colors duration-200">
+                          {achievement}
+                        </span>
                       </motion.li>
                     ))}
                   </ul>
