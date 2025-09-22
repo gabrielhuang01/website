@@ -6,7 +6,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
   profilePicture: "/profile.jpeg",
   heroDescription:
-    "Dual B.S. in Computer Science & ORIE at Cornell University. Passionate about machine learning, data science, and building impactful solutions. Currently working as an LLM Evaluation & Research Fellow at Handshake x OpenAI and conducting research in reinforced learning at Cornell Engineering.",
+    "Passionate about machine learning, data science, and building impactful solutions. Currently working as an LLM Evaluation & Research Fellow at Handshake x OpenAI and conducting research in reinforced learning at Cornell Engineering.",
 };
 
 export const workExperience = [
@@ -39,7 +39,7 @@ export const workExperience = [
     location: "New York, NY",
     position: "Impact Data Scientist",
     period: "March 2024 - May 2025",
-    logo: "https://logo.clearbit.com/commonpointqueens.org",
+    logo: "https://www.commonpoint.org/wp-content/uploads/2023/11/logo2.webp",
     achievements: [
       "Engineered data analytics solutions to serve NYC, optimizing staff satisfaction, participant distribution, and program performance systems while incorporating ETL processes and ensuring data quality control.",
       "Designed and implemented statistical, machine-learning solutions (sklearn) to best model and optimize problems with company turnover.",
