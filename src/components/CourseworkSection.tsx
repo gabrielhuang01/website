@@ -105,7 +105,7 @@ export default function CourseworkSection() {
         </MotionWrapper>
 
         <motion.div
-          className="space-y-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -113,8 +113,8 @@ export default function CourseworkSection() {
         >
           {coursework.map((category, categoryIndex) => (
             <motion.div key={category.category} variants={categoryVariants}>
-              <GlassCard className="p-6">
-                <h3 className="text-lg font-bold mb-4 text-center md:text-left flex items-center">
+              <GlassCard className="p-6 h-full">
+                <h3 className="text-lg font-bold mb-4 text-center flex items-center justify-center">
                   <span className="mr-2 text-xl">
                     {categoryIndex === 0 && "💻"}
                     {categoryIndex === 1 && "⚙️"}
@@ -122,7 +122,7 @@ export default function CourseworkSection() {
                   </span>
                   {category.category}
                 </h3>
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {category.courses.map((course, index) => (
                     <CourseTag key={course} course={course} index={index} />
                   ))}
