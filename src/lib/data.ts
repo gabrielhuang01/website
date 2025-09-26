@@ -6,12 +6,12 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
   profilePicture: "/profile-latest.png",
   heroDescription:
-    "Currently an LLM Evaluation & Research Fellow at Handshake x OpenAI and conducting research in reinforced learning at Cornell Engineering.",
+    "Currently conducting LLM Evaluation research at OpenAI and in reinforced learning at Cornell Engineering.",
 };
 
 export const workExperience = [
   {
-    company: "Handshake x OpenAI",
+    company: "OpenAI x Handshake",
     location: "Remote",
     position: "LLM Evaluation & Research Fellow",
     period: "July 2025 - Present",
