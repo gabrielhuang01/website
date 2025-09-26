@@ -14,13 +14,13 @@ export default function ExperienceSection() {
         <MotionWrapper>
           <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center">
             <motion.span
-              className="inline-block mr-2"
+              className="inline-block mr-2 text-primary"
               initial={{ rotate: 0 }}
               whileInView={{ rotate: [0, -10, 10, -5, 5, 0] }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              💼
+              <Briefcase size={24} />
             </motion.span>{" "}
             Work Experience
           </h2>

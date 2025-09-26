@@ -13,8 +13,9 @@ export default function AwardsSection() {
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            🏆 Awards
+          <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center">
+            <Trophy size={24} className="mr-2 text-primary" />
+            Awards
           </h2>
         </MotionWrapper>
 

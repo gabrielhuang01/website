@@ -1,7 +1,7 @@
 import ThemeToggle from "./ui/theme-toggle";
 import { personalInfo } from "@/lib/data";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, GraduationCap, Briefcase, BookOpen, Rocket, Trophy } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function GlassHeader() {
@@ -10,10 +10,10 @@ export default function GlassHeader() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="sticky z-50 w-full backdrop-blur-lg backdrop-filter bg-background/60 dark:bg-background/30 border-b border-primary/20 dark:border-primary/30 supports-[backdrop-filter]:bg-background/50">
-      <div className="container max-w-4xl mx-auto p-4 flex justify-between items-center">
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl backdrop-blur-lg backdrop-filter bg-white/80 dark:bg-slate-900/80 border border-slate-200/50 dark:border-slate-700/50 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-slate-900/50 supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-slate-900/70">
+      <div className="container mx-auto p-4 flex justify-between items-center">
         <motion.a
-          className="flex items-center text-lg font-medium"
+          className="flex items-center text-lg font-bold text-slate-800 dark:text-slate-100"
           href="/"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -28,18 +28,18 @@ export default function GlassHeader() {
               <motion.a
                 key={item}
                 href={`#${item}`}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                className="flex items-center space-x-1.5 transition-colors hover:text-slate-800 dark:hover:text-slate-100 text-slate-600 dark:text-slate-400"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2, delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
-                {item === "education" && "🎓 "}
-                {item === "experience" && "💼 "}
-                {item === "coursework" && "📚 "}
-                {item === "projects" && "🚀 "}
-                {item === "awards" && "🏆 "}
-                {item.charAt(0).toUpperCase() + item.slice(1)}
+                {item === "education" && <GraduationCap size={16} />}
+                {item === "experience" && <Briefcase size={16} />}
+                {item === "coursework" && <BookOpen size={16} />}
+                {item === "projects" && <Rocket size={16} />}
+                {item === "awards" && <Trophy size={16} />}
+                <span>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
               </motion.a>
             )
           )}
@@ -50,7 +50,7 @@ export default function GlassHeader() {
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2 text-slate-600 dark:text-slate-400"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             whileTap={{ scale: 0.95 }}
@@ -64,7 +64,7 @@ export default function GlassHeader() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="md:hidden py-4 px-4 border-t border-border/10 backdrop-blur-md backdrop-filter bg-background/80 dark:bg-background/40"
+            className="md:hidden py-4 px-4 border-t border-slate-200/20 dark:border-slate-700/20 backdrop-blur-md backdrop-filter bg-white/90 dark:bg-slate-900/90 rounded-b-2xl"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -76,18 +76,18 @@ export default function GlassHeader() {
                   <motion.a
                     key={item}
                     href={`#${item}`}
-                    className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
+                    className="flex items-center space-x-2 transition-colors hover:text-slate-800 dark:hover:text-slate-100 text-slate-600 dark:text-slate-400 py-2"
                     onClick={toggleMenu}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.1 }}
                   >
-                    {item === "education" && "🎓 "}
-                    {item === "experience" && "💼 "}
-                    {item === "coursework" && "📚 "}
-                    {item === "projects" && "🚀 "}
-                    {item === "awards" && "🏆 "}
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                    {item === "education" && <GraduationCap size={16} />}
+                    {item === "experience" && <Briefcase size={16} />}
+                    {item === "coursework" && <BookOpen size={16} />}
+                    {item === "projects" && <Rocket size={16} />}
+                    {item === "awards" && <Trophy size={16} />}
+                    <span>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
                   </motion.a>
                 )
               )}

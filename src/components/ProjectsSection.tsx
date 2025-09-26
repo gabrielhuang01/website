@@ -13,6 +13,7 @@ import MotionWrapper from "./MotionWrapper";
 import { motion } from "framer-motion";
 import ScrollReveal, { StaggerReveal } from "./ScrollReveal";
 import AnimatedGradient from "./AnimatedGradient";
+import { Rocket } from "lucide-react";
 
 export default function ProjectsSection() {
   return (
@@ -28,8 +29,9 @@ export default function ProjectsSection() {
       
       <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
         <ScrollReveal direction="up" distance={30}>
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            🚀 Projects
+          <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center">
+            <Rocket size={24} className="mr-2 text-primary" />
+            Projects
           </h2>
         </ScrollReveal>
 

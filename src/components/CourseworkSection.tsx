@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 import { GlassCard } from "./ui/glass-card";
+import { BookOpen } from "lucide-react";
 
 const coursework = [
   {
@@ -99,8 +100,9 @@ export default function CourseworkSection() {
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
-          <h2 className="text-2xl font-bold mb-8 text-center">
-            📚 Coursework
+          <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center">
+            <BookOpen size={24} className="mr-2 text-primary" />
+            Coursework
           </h2>
         </MotionWrapper>
 
