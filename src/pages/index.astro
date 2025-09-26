@@ -2,7 +2,6 @@
 import Layout from "@/layouts/Layout.astro";
 import GlassHeader from "@/components/GlassHeader";
 import HeroSection from "@/components/HeroSection";
-import SectionDivider from "@/components/SectionDivider";
 import SimpleDivider from "@/components/SimpleDivider";
 import ExperienceSection from "@/components/ExperienceSection";
 import CourseworkSection from "@/components/CourseworkSection";
@@ -19,7 +18,6 @@ import Footer from "@/components/Footer";
   <GlassHeader client:only="react" />
   <main class="min-h-screen">
     <HeroSection client:only="react" />
-    <SectionDivider client:only="react" />
     <ScrollLiftAnimation client:only="react">
       <EducationSection client:only="react" />
       <SimpleDivider client:only="react" />

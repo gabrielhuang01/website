@@ -28,7 +28,7 @@ export default function ProjectsSection() {
       
       <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
         <ScrollReveal direction="up" distance={30}>
-          <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
+          <h2 className="text-2xl font-bold mb-8 text-center">
             🚀 Projects
           </h2>
         </ScrollReveal>
