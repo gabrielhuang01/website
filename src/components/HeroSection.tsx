@@ -14,7 +14,7 @@ export default function HeroSection() {
     "Undergrad at Cornell University",
     "AI/ML Engineer",
     "Software Engineer", 
-    "Quantitative Trader"
+    "Discretionary & Systematic Trader"
   ];
 
   useEffect(() => {
