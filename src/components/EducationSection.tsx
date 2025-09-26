@@ -45,7 +45,7 @@ export default function EducationSection() {
   return (
     <section
       id="education"
-      className="pt-6 pb-0 bg-gradient-to-b from-background to-muted/10"
+      className="pt-2 pb-6 bg-gradient-to-b from-background to-muted/10"
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
@@ -71,7 +71,7 @@ export default function EducationSection() {
               subtitle={`${edu.institution} • ${edu.location}`}
               date={`📅 ${edu.period}`}
               logo={edu.logo}
-              isLast={false}
+              isLast={index === education.length - 1}
               index={index}
             >
               <div className="flex flex-col lg:flex-row gap-6">
