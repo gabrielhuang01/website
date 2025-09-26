@@ -45,11 +45,11 @@ export default function EducationSection() {
   return (
     <section
       id="education"
-      className="py-6 bg-gradient-to-b from-background to-muted/10"
+      className="py-6 bg-gradient-to-b from-gray-50 to-white"
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
-          <h2 className="text-2xl font-bold mb-8 text-center md:text-left flex items-center md:inline-block">
+          <h2 className="text-2xl font-bold mb-8 text-center flex items-center justify-center">
             <motion.span
               className="inline-block mr-2"
               initial={{ rotate: 0 }}
