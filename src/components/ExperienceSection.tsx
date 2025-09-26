@@ -75,32 +75,37 @@ export default function ExperienceSection() {
                 </div>
                 
                 {/* Skills sub-box aligned with job title */}
-                <div className="lg:w-64 w-full">
+                <div className="lg:w-64 w-full flex">
                   <motion.div
-                    className="bg-background/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg border border-primary/10 p-4 h-fit mt-3"
+                    className="bg-background/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg border border-primary/10 p-4 flex flex-col mt-3 w-full"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
+                    style={{ minHeight: '100%' }}
                   >
                     <div className="flex items-center mb-3">
                       <Code className="h-4 w-4 text-primary mr-2" />
                       <h4 className="text-lg font-bold text-foreground">Technologies</h4>
                     </div>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-col gap-2 flex-grow">
                       {job.skills?.slice(0, 4).map((skill, skillIndex) => (
-                        <motion.span
+                        <motion.div
                           key={skill}
-                          className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary px-2 py-1 rounded-lg font-medium border border-primary/20 hover:bg-primary/15 hover:border-primary/30 transition-all duration-200"
+                          className="w-full"
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 0.4 + skillIndex * 0.1 }}
                           viewport={{ once: true }}
-                          whileHover={{ scale: 1.05 }}
                         >
-                          {skill}
-                        </motion.span>
+                          <motion.span
+                            className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary px-2 py-1 rounded-lg font-medium border border-primary/20 hover:bg-primary/15 hover:border-primary/30 transition-all duration-200 w-full inline-block"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {skill}
+                          </motion.span>
+                        </motion.div>
                       ))}
                     </div>
                   </motion.div>

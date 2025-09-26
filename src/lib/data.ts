@@ -6,7 +6,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
   profilePicture: "/profile-latest.png",
   heroDescription:
-    "Conducting research at OpenAI (LLM Eval) and Cornell Engineering (RL for Queuing Networks).",
+    "Conducting research at OpenAI (LLM Evaluation) and Cornell Engineering (RL for Queuing Networks).",
 };
 
 export const workExperience = [
@@ -34,7 +34,7 @@ export const workExperience = [
       "Developed modular, class-based experiment harnesses, unit tests, and logging/visualization of performance fronts, and instrumented KPIs including mean sojourn time, queue length, tail delay quantiles, and throughput.",
       "Implemented and benchmarked novel policy-gradient methods (PATHWISE/reparameterization, IPA, PPO) against REINFORCE and classical heuristics (MaxWeight, MaxPressure), running ablations across arrival/service regimes and overload.",
     ],
-    skills: ["Python", "C++", "Simulation", "Reinforcement Learning", "PPO", "Policy Gradients", "Optimization", "Analytics", "Queueing Theory"],
+    skills: ["Pytorch", "C++", "Continuous-Time Simulation", "Reinforcement Learning", "PPO", "Policy Gradients", "Optimization", "Analytics", "Queueing Theory"],
   },
   {
     company: "Commonpoint",
@@ -48,7 +48,7 @@ export const workExperience = [
       "Pioneer real-time data visualization platforms (Tableau, Looker), empowering C-Suite decision making and enhancing fiscal reporting efficiency.",
       "Spearhead high-impact presentations on new investments, securing $500,000+ funding increases by demonstrating measurable organizational impact to external stakeholders.",
     ],
-    skills: ["Python", "Sklearn", "Tableau", "Looker", "Data Analytics", "ETL Process", "Machine Learning", "Data Visualization", "Statistical Analysis"],
+    skills: ["Statistical Analysis", "Sklearn", "Tableau", "ETL Process", "Data Analytics", "Machine Learning", "Data Visualization"],
   },
   {
     company: "Involio",
