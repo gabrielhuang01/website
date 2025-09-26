@@ -8,7 +8,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-6 bg-white dark:bg-slate-800"
+      className="pt-12 pb-6 bg-white dark:bg-slate-800"
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>
