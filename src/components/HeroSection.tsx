@@ -2,6 +2,8 @@ import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import MotionWrapper from "./MotionWrapper";
+import DoodleAnimation from "./DoodleAnimation";
 
 export default function HeroSection() {
   const [currentTitle, setCurrentTitle] = useState("");
@@ -12,7 +14,7 @@ export default function HeroSection() {
     "Undergrad at Cornell University",
     "AI/ML Engineer",
     "Software Engineer", 
-    "Discretionary & Systematic Trader"
+    "Quantitative Trader"
   ];
 
   useEffect(() => {
@@ -35,7 +37,6 @@ export default function HeroSection() {
 
     return () => clearTimeout(timeout);
   }, [currentTitle, isDeleting, currentIndex, titles]);
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -87,9 +88,12 @@ export default function HeroSection() {
           animate="visible"
         >
           <div className="text-center md:text-left">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
+            <motion.h1 
+              className="text-3xl md:text-4xl font-bold mb-4"
+              variants={containerVariants}
+            >
               welcome to my website.
-            </h1>
+            </motion.h1>
 
             <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
               <span className="text-xl">
@@ -154,7 +158,12 @@ export default function HeroSection() {
           </div>
 
           <div className="mt-8 md:mt-0 flex justify-center md:justify-end">
-            <div className="relative group">
+            <motion.div 
+              className="relative group"
+              variants={containerVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
               {/* Professional square border with gradient */}
               <div className="absolute -inset-1 bg-gradient-to-br from-slate-300 via-slate-400 to-slate-500 dark:from-slate-600 dark:via-slate-700 dark:to-slate-800 rounded-2xl shadow-xl" />
               <div className="absolute -inset-0.5 bg-white dark:bg-slate-900 rounded-2xl" />
@@ -169,16 +178,21 @@ export default function HeroSection() {
               
               {/* Subtle inner glow effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none" />
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
-        <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-600 shadow-lg">
+        <motion.div 
+          className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm p-6 rounded-2xl border-2 border-slate-200 dark:border-slate-600 shadow-lg"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <p className="text-slate-700 dark:text-slate-300 pl-4 py-2 relative">
             <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-slate-400 to-slate-600 rounded-full"></span>
             {personalInfo.heroDescription}
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
