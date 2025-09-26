@@ -1,6 +1,6 @@
 import { workExperience } from "@/lib/data";
 import TimelineItem from "./TimelineItem";
-import { Briefcase } from "lucide-react";
+import { Briefcase, Code } from "lucide-react";
 import { motion } from "framer-motion";
 import MotionWrapper from "./MotionWrapper";
 
@@ -49,25 +49,62 @@ export default function ExperienceSection() {
                   </div>
                   <h4 className="text-sm font-medium">Key Achievements</h4>
                 </div>
-                <ul className="list-none ml-4 space-y-3 text-sm">
-                  {job.achievements.map((achievement, i) => (
-                    <motion.li
-                      key={i}
-                      className="text-muted-foreground relative pl-6 group"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: 0.1 * i }}
+                <div className="flex flex-col lg:flex-row gap-6">
+                  {/* Main achievements content */}
+                  <div className="flex-1">
+                    <ul className="list-none ml-4 space-y-3 text-sm">
+                      {job.achievements.map((achievement, i) => (
+                        <motion.li
+                          key={i}
+                          className="text-muted-foreground relative pl-6 group"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: 0.1 * i }}
+                          viewport={{ once: true }}
+                          whileHover={{ x: 4 }}
+                        >
+                          <div className="absolute left-0 top-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary group-hover:scale-125 transition-all duration-200"></div>
+                          <div className="absolute left-2 top-2 w-0.5 h-0.5 rounded-full bg-primary/40 group-hover:bg-primary/60 transition-all duration-200"></div>
+                          <span className="group-hover:text-foreground/90 transition-colors duration-200">
+                            {achievement}
+                          </span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  {/* Skills sub-box */}
+                  <div className="lg:w-64 w-full">
+                    <motion.div
+                      className="bg-background/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg border border-primary/10 p-4 h-fit"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
                       viewport={{ once: true }}
-                      whileHover={{ x: 4 }}
+                      whileHover={{ scale: 1.02 }}
                     >
-                      <div className="absolute left-0 top-1.5 w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary group-hover:scale-125 transition-all duration-200"></div>
-                      <div className="absolute left-2 top-2 w-0.5 h-0.5 rounded-full bg-primary/40 group-hover:bg-primary/60 transition-all duration-200"></div>
-                      <span className="group-hover:text-foreground/90 transition-colors duration-200">
-                        {achievement}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
+                      <div className="flex items-center mb-3">
+                        <Code className="h-4 w-4 text-primary mr-2" />
+                        <h4 className="text-sm font-semibold text-foreground">Technologies</h4>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {job.skills?.map((skill, skillIndex) => (
+                          <motion.span
+                            key={skill}
+                            className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary px-2 py-1 rounded-lg font-medium border border-primary/20 hover:bg-primary/15 hover:border-primary/30 transition-all duration-200"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.4 + skillIndex * 0.1 }}
+                            viewport={{ once: true }}
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            {skill}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
               </motion.div>
             </TimelineItem>
           ))}

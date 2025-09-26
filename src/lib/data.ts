@@ -6,7 +6,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
   profilePicture: "/profile-latest.png",
   heroDescription:
-    "Currently conducting LLM Evaluation research at OpenAI and in reinforced learning at Cornell Engineering.",
+    "Currently conducting research at OpenAI (LLM Evaluation) and Cornell Engineering (Reinforced Learning for Queuing Networks).",
 };
 
 export const workExperience = [
@@ -21,6 +21,7 @@ export const workExperience = [
       "Build and maintain an automated eval harness (Python, OpenAI APIs, async workers) running async prompts across proprietary benchmarks; shipping weekly dashboards with 95% CIs.",
       "Spearhead teams of QA experts (Physics, CS PhDs) in preparing SoTA training data, testing lab capabilities with cutting edge human-validated domain data.",
     ],
+    skills: ["Python", "OpenAI APIs", "Async Programming", "Validation Testing", "Data Science", "Benchmark Development", "NLP", "QA Systems"],
   },
   {
     company: "Cornell Engineering; ORIE Dept.",
@@ -33,6 +34,7 @@ export const workExperience = [
       "Developed modular, class-based experiment harnesses, unit tests, and logging/visualization of performance fronts, and instrumented KPIs including mean sojourn time, queue length, tail delay quantiles, and throughput.",
       "Implemented and benchmarked novel policy-gradient methods (PATHWISE/reparameterization, IPA, PPO) against REINFORCE and classical heuristics (MaxWeight, MaxPressure), running ablations across arrival/service regimes and overload.",
     ],
+    skills: ["Python", "C++", "Simulation", "Reinforcement Learning", "PPO", "Policy Gradients", "Optimization", "Analytics", "Queueing Theory"],
   },
   {
     company: "Commonpoint",
@@ -46,6 +48,7 @@ export const workExperience = [
       "Pioneer real-time data visualization platforms (Tableau, Looker), empowering C-Suite decision making and enhancing fiscal reporting efficiency.",
       "Spearhead high-impact presentations on new investments, securing $500,000+ funding increases by demonstrating measurable organizational impact to external stakeholders.",
     ],
+    skills: ["Python", "Sklearn", "Tableau", "Looker", "Data Analytics", "ETL Process", "Machine Learning", "Data Visualization", "Statistical Analysis"],
   },
   {
     company: "Involio",
@@ -59,6 +62,7 @@ export const workExperience = [
       "Designed and integrated RESTful APIs to fetch and display live financial metrics and user-generated content.",
       "Implemented SQL queries and optimized database schemas to reduce query latency.",
     ],
+    skills: ["React", "TypeScript", "Python", "Flask", "REST APIs", "SQL", "Database Optimization", "Frontend Development", "Financial Tech"],
   },
 ];
 
