@@ -36,22 +36,22 @@ export default function ExperienceSection() {
               isLast={index === workExperience.length - 1}
               index={index}
             >
-              <motion.div
-                className="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-primary/20 dark:bg-card/10 dark:border-primary/20 shadow-sm"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex items-center mb-3">
-                  <div className="h-6 w-6 flex items-center justify-center rounded-full bg-primary/10 mr-2">
-                    <Briefcase className="h-4 w-4 text-primary" />
-                  </div>
-                  <h4 className="text-sm font-medium">Key Achievements</h4>
-                </div>
-                <div className="flex flex-col lg:flex-row gap-6">
-                  {/* Main achievements content */}
-                  <div className="flex-1">
+              <div className="flex flex-col lg:flex-row gap-6">
+                {/* Main achievements content */}
+                <div className="flex-1">
+                  <motion.div
+                    className="mt-3 p-4 bg-background/80 backdrop-blur-sm backdrop-filter rounded-lg border border-primary/20 dark:bg-card/10 dark:border-primary/20 shadow-sm"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex items-center mb-3">
+                      <div className="h-6 w-6 flex items-center justify-center rounded-full bg-primary/10 mr-2">
+                        <Briefcase className="h-4 w-4 text-primary" />
+                      </div>
+                      <h4 className="text-sm font-medium">Key Achievements</h4>
+                    </div>
                     <ul className="list-none ml-4 space-y-3 text-sm">
                       {job.achievements.map((achievement, i) => (
                         <motion.li
@@ -71,41 +71,41 @@ export default function ExperienceSection() {
                         </motion.li>
                       ))}
                     </ul>
-                  </div>
-                  
-                  {/* Skills sub-box */}
-                  <div className="lg:w-64 w-full">
-                    <motion.div
-                      className="bg-background/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg border border-primary/10 p-4 h-fit"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.02 }}
-                    >
-                      <div className="flex items-center mb-3">
-                        <Code className="h-4 w-4 text-primary mr-2" />
-                        <h4 className="text-sm font-semibold text-foreground">Technologies</h4>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {job.skills?.map((skill, skillIndex) => (
-                          <motion.span
-                            key={skill}
-                            className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary px-2 py-1 rounded-lg font-medium border border-primary/20 hover:bg-primary/15 hover:border-primary/30 transition-all duration-200"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ delay: 0.4 + skillIndex * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ scale: 1.05 }}
-                          >
-                            {skill}
-                          </motion.span>
-                        ))}
-                      </div>
-                    </motion.div>
-                  </div>
+                  </motion.div>
                 </div>
-              </motion.div>
+                
+                {/* Skills sub-box aligned with job title */}
+                <div className="lg:w-64 w-full">
+                  <motion.div
+                    className="bg-background/60 dark:bg-slate-800/60 backdrop-blur-sm rounded-lg border border-primary/10 p-4 h-fit mt-3"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    whileHover={{ scale: 1.02 }}
+                  >
+                    <div className="flex items-center mb-3">
+                      <Code className="h-4 w-4 text-primary mr-2" />
+                      <h4 className="text-lg font-bold text-foreground">Technologies</h4>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {job.skills?.slice(0, 4).map((skill, skillIndex) => (
+                        <motion.span
+                          key={skill}
+                          className="text-xs bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary px-2 py-1 rounded-lg font-medium border border-primary/20 hover:bg-primary/15 hover:border-primary/30 transition-all duration-200"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.4 + skillIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          {skill}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </TimelineItem>
           ))}
         </div>

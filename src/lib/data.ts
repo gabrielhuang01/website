@@ -6,7 +6,7 @@ export const personalInfo = {
   linkedin: "https://linkedin.com/in/gabriel-huang-627159237",
   profilePicture: "/profile-latest.png",
   heroDescription:
-    "Currently conducting research at OpenAI (LLM Evaluation) and Cornell Engineering (Reinforced Learning for Queuing Networks).",
+    "Conducting research at OpenAI (LLM Eval) and Cornell Engineering (RL for Queuing Networks).",
 };
 
 export const workExperience = [

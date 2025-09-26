@@ -92,7 +92,7 @@ export default function HeroSection() {
               className="text-3xl md:text-4xl font-bold mb-4"
               variants={containerVariants}
             >
-              welcome to my website.
+              hi ~ welcome to my website.
             </motion.h1>
 
             <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
