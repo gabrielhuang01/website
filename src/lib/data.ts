@@ -128,9 +128,9 @@ export const projects = [
       "After recognizing inefficiencies in Kalshi's nascent markets, develop arbitrage scanners that scrape range markets for clear inefficiencies and execute on them.",
       "Backend built on Python, utilizing asyncio REST and websocket calls to Kalshi's API.",
       "Sharpe: 2.8. Currently improving by building NLP, regex recognition of market structure through title — main losses are through miscategorization of respective market.",
-      "Technologies: asyncio, REST, websockets, huggingface",
       "Status: Deployed (March 2025 - Present)",
     ],
+    skills: ["Python", "asyncio", "REST APIs", "Websockets", "NLP", "HuggingFace", "Financial Trading"],
   },
   {
     title: "SVD Gradient Execution Algorithm",
@@ -139,10 +139,9 @@ export const projects = [
       "Backtested and developed a fully autonomous trading algorithm using Python's backtrader library",
       "Utilized Singular Value Decomposition to map out correlations between 5 different market sectors over an 8-year period, using 12 different stocks from these sectors",
       "Executed trades when the gradient between the projection of price vectors onto selected singular vectors exceeded an optimized threshold",
-      "Plotted results and performed train-test splits to check for overfitting",
-      "Technologies: backtrader, quantstats, yfinance, numpy",
       "Duration: May 2022 – June 2022",
     ],
+    skills: ["Python", "Backtrader", "Quantstats", "YFinance", "NumPy", "SVD", "Trading Algorithm"],
   },
 ];
 
