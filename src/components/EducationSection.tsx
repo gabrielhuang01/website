@@ -45,7 +45,7 @@ export default function EducationSection() {
   return (
     <section
       id="education"
-      className="pt-2 pb-6 bg-gradient-to-b from-background to-muted/10"
+      className="pt-2 pb-6 bg-slate-50 dark:bg-slate-900"
     >
       <div className="container max-w-4xl mx-auto px-6 md:px-4">
         <MotionWrapper>

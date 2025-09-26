@@ -16,7 +16,7 @@ import AnimatedGradient from "./AnimatedGradient";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-6 relative overflow-hidden">
+    <section id="projects" className="py-6 bg-white dark:bg-slate-800 relative overflow-hidden">
       {/* Animated Background */}
       <AnimatedGradient 
         className="opacity-5"
