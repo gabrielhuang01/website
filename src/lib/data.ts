@@ -21,7 +21,7 @@ export const workExperience = [
       "Build and maintain an automated eval harness (Python, OpenAI APIs, async workers) running async prompts across proprietary benchmarks; shipping weekly dashboards with 95% CIs.",
       "Spearhead teams of QA experts (Physics, CS PhDs) in preparing SoTA training data, testing lab capabilities with cutting edge human-validated domain data.",
     ],
-    skills: ["Python", "OpenAI APIs", "Async Programming", "Validation Testing", "Data Science", "Benchmark Development", "NLP", "QA Systems"],
+    skills: ["Model Validation", "OpenAI APIs", "Async Programming", "NLP", "Data Science", "Benchmark Development", "NLP", "QA Systems"],
   },
   {
     company: "Cornell Engineering; ORIE Dept.",
