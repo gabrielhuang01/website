@@ -2,8 +2,6 @@ import { personalInfo } from "@/lib/data";
 import { Mail, Github, MapPin, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import MotionWrapper from "./MotionWrapper";
-import DoodleAnimation from "./DoodleAnimation";
 
 export default function HeroSection() {
   const [currentTitle, setCurrentTitle] = useState("");
@@ -37,6 +35,7 @@ export default function HeroSection() {
 
     return () => clearTimeout(timeout);
   }, [currentTitle, isDeleting, currentIndex, titles]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -89,7 +88,7 @@ export default function HeroSection() {
         >
           <div className="text-center md:text-left">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-800 dark:text-slate-100">
-               welcome to my website.
+              welcome to my website.
             </h1>
 
             <div className="text-xl text-slate-600 dark:text-slate-300 mb-8 min-h-[1.5rem]">
