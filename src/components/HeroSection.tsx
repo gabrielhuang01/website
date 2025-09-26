@@ -118,7 +118,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, x: 4 }}
               >
                 <MapPin className="h-4 w-4 mr-2 group-hover:text-primary transition-colors duration-200" />
-                <span className="group-hover:text-foreground transition-colors duration-200">📍 {personalInfo.location}</span>
+                <span className="group-hover:text-foreground transition-colors duration-200">{personalInfo.location}</span>
               </motion.div>
 
               <motion.a
@@ -128,7 +128,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, x: 4 }}
               >
                 <Mail className="h-4 w-4 mr-2 group-hover:text-primary transition-colors duration-200" />
-                <span className="group-hover:text-foreground transition-colors duration-200">✉️ {personalInfo.email}</span>
+                <span className="group-hover:text-foreground transition-colors duration-200">{personalInfo.email}</span>
               </motion.a>
 
               <motion.a
@@ -140,7 +140,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, x: 4 }}
               >
                 <Github className="h-4 w-4 mr-2 group-hover:text-primary group-hover:rotate-12 transition-all duration-200" />
-                <span className="group-hover:text-foreground transition-colors duration-200">🌟 GitHub</span>
+                <span className="group-hover:text-foreground transition-colors duration-200">GitHub</span>
               </motion.a>
 
               <motion.a
@@ -152,7 +152,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05, x: 4 }}
               >
                 <Linkedin className="h-4 w-4 mr-2 group-hover:text-primary group-hover:rotate-12 transition-all duration-200" />
-                <span className="group-hover:text-foreground transition-colors duration-200">🔗 LinkedIn</span>
+                <span className="group-hover:text-foreground transition-colors duration-200">LinkedIn</span>
               </motion.a>
             </motion.div>
           </div>
