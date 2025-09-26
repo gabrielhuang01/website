@@ -42,7 +42,7 @@ const { title = "Gabriel Huang - Portfolio", description = "My Portfolio" } =
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    return "light"; // Default to light mode
+    return "dark"; // Default to dark mode
   };
   const isDark = getThemePreference() === "dark";
   document.documentElement.classList[isDark ? "add" : "remove"]("dark");

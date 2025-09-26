@@ -16,7 +16,7 @@ import AnimatedGradient from "./AnimatedGradient";
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-6 relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+    <section id="projects" className="py-6 relative overflow-hidden">
       {/* Animated Background */}
       <AnimatedGradient 
         className="opacity-5"
@@ -28,7 +28,7 @@ export default function ProjectsSection() {
       
       <div className="container max-w-4xl mx-auto px-6 md:px-4 relative z-10">
         <ScrollReveal direction="up" distance={30}>
-          <h2 className="text-2xl font-bold mb-8 text-center">
+          <h2 className="text-2xl font-bold mb-8 text-center md:text-left">
             🚀 Projects
           </h2>
         </ScrollReveal>
